@@ -1,4 +1,4 @@
-package ru.sbt.mipt.oop;
+package ru.sbt.mipt.oop.sensors;
 
 public class RandomSensorEventProvider {
     public static SensorEvent getNextSensorEvent() {
