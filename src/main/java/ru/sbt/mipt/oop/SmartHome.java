@@ -1,9 +1,18 @@
 package ru.sbt.mipt.oop;
 
+import ru.sbt.mipt.oop.composite.Action;
+import ru.sbt.mipt.oop.composite.Executable;
+import ru.sbt.mipt.oop.entity.Light;
+import ru.sbt.mipt.oop.entity.Room;
+import ru.sbt.mipt.oop.sensors.CommandType;
+import ru.sbt.mipt.oop.sensors.SensorCommand;
+import ru.sbt.mipt.oop.sensors.SensorCommandExecutor;
+
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class SmartHome implements Executable{
+public class SmartHome implements Executable {
+
     Collection<Room> rooms;
 
     public SmartHome() {

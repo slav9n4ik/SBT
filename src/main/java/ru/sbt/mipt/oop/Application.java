@@ -1,42 +1,35 @@
 package ru.sbt.mipt.oop;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
+import ru.sbt.mipt.oop.observer.DoorEventHandler;
+import ru.sbt.mipt.oop.observer.HomeEventsObserver;
+import ru.sbt.mipt.oop.observer.LightEventHandler;
+import ru.sbt.mipt.oop.sensors.SensorEventType;
 
-import static ru.sbt.mipt.oop.SensorEventType.*;
+import java.io.IOException;
 
 public class Application {
 
-    private static SmartHomeLoader smartHomeLoader = new FileSmartHomeLoader();
+    private SmartHomeLoader smartHomeLoader = new FileSmartHomeLoader();
 
-    public static void setSmartHomeLoader(SmartHomeLoader smartHomeLoader) {
-        Application.smartHomeLoader = smartHomeLoader;
-    }
+//    public void setSmartHomeLoader(SmartHomeLoader smartHomeLoader) {
+//        Application.smartHomeLoader = smartHomeLoader;
+//    }
 
     public static void main(String... args) throws IOException {
+        new Application().startApplication();
+    }
+
+    private void startApplication() throws IOException {
         SmartHome smartHome = smartHomeLoader.loadSmartHome();
-        runEventsCycle(smartHome);
-    }
 
-    private static void runEventsCycle(SmartHome smartHome) {
-        SensorEvent event = RandomSensorEventProvider.getNextSensorEvent();
-        Collection<EventProcessor> eventProcessors = configureEventProcessors();
-        while (event != null) {
-            System.out.println("Got event: " + event);
-            for (EventProcessor eventProcessor : eventProcessors) {
-                eventProcessor.processEvent(smartHome, event);
-            }
-            event = RandomSensorEventProvider.getNextSensorEvent();
-        }
-    }
+        HomeEventsObserver observer = new HomeEventsObserver();
+        observer.events.subscribe(SensorEventType.DOOR_OPEN, new DoorEventHandler());
+        observer.events.subscribe(SensorEventType.DOOR_CLOSED, new DoorEventHandler());
+        observer.events.subscribe(SensorEventType.LIGHT_ON, new LightEventHandler());
+        observer.events.subscribe(SensorEventType.LIGHT_OFF, new LightEventHandler());
 
-    private static Collection<EventProcessor> configureEventProcessors() {
-        Collection<EventProcessor> eventProcessors = new ArrayList<>();
-        eventProcessors.add(new LightsEventProcessor());
-        eventProcessors.add(new DoorEventProcessor());
-        eventProcessors.add(new HallDoorEventProcessor());
-        return eventProcessors;
+        //НЕЗАБУДЬ ПРО ТРЕТИЙ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        observer.runEventsCycle(smartHome);
     }
 
 }
