@@ -1,6 +1,7 @@
 package ru.sbt.mipt.oop.observer;
 
 import ru.sbt.mipt.oop.SmartHome;
+import ru.sbt.mipt.oop.eventprocessors.EventProcessor;
 import ru.sbt.mipt.oop.sensors.SensorEvent;
 import ru.sbt.mipt.oop.sensors.SensorEventType;
 
@@ -10,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 public class EventManager {
-    Map<SensorEventType, List<EventHandler>> listeners = new HashMap<>();
+    private Map<SensorEventType, List<EventProcessor>> listeners = new HashMap<>();
 
     public EventManager(SensorEventType[] operations) {
         for (SensorEventType operation : operations) {
@@ -18,21 +19,25 @@ public class EventManager {
         }
     }
 
-    public void subscribe(SensorEventType eventType, EventHandler listener) {
-        List<EventHandler> processors = listeners.get(eventType);
+    public void subscribe(SensorEventType eventType, EventProcessor listener) {
+        List<EventProcessor> processors = listeners.get(eventType);
         processors.add(listener);
     }
 
-    public void unsubscribe(SensorEventType eventType, EventHandler listener) {
-        List<EventHandler> users = listeners.get(eventType);
+    public void unsubscribe(SensorEventType eventType, EventProcessor listener) {
+        List<EventProcessor> users = listeners.get(eventType);
         int index = users.indexOf(listener);
         users.remove(index);
     }
 
     public void notify(SensorEvent event, SmartHome smartHome) {
-        List<EventHandler> processors = listeners.get(event.getType());
-        for (EventHandler listener : processors) {
-            listener.update(event, smartHome);
+        List<EventProcessor> processors = listeners.get(event.getType());
+        for (EventProcessor listener : processors) {
+            listener.processEvent(smartHome, event);
         }
+    }
+
+    public Map<SensorEventType, List<EventProcessor>> getListeners() {
+        return listeners;
     }
 }
