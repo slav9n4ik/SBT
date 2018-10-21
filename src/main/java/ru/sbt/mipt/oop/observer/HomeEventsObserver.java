@@ -1,32 +1,34 @@
 package ru.sbt.mipt.oop.observer;
 
 import ru.sbt.mipt.oop.SmartHome;
-import ru.sbt.mipt.oop.sensors.RandomSensorEventProvider;
 import ru.sbt.mipt.oop.sensors.SensorEvent;
+import ru.sbt.mipt.oop.sensors.SensorEventProvider;
 import ru.sbt.mipt.oop.sensors.SensorEventType;
 
 public class HomeEventsObserver {
 
-    public EventManager events;
+    private EventManager events;
+    private SensorEventProvider sensorEventProvider;
 
-    public HomeEventsObserver() {
-        this.events = new EventManager(SensorEventType.values());
+    public HomeEventsObserver(SensorEventProvider sensorEventProvider, EventManager events) {
+        this.events = events;
+        this.sensorEventProvider = sensorEventProvider;
     }
 
     public void runEventsCycle(SmartHome smartHome) {
-        SensorEvent event = RandomSensorEventProvider.getNextSensorEvent();
+        SensorEvent event = sensorEventProvider.getNextSensorEvent();
 //        Collection<EventProcessor> eventProcessors = configureEventProcessors();
         while (event != null) {
             System.out.println("Got event: " + event);
 //            for (EventProcessor eventProcessor : eventProcessors) {
 //                eventProcessor.processEvent(smartHome, event);
 //            }
-            for (SensorEventType typeEventFromSubscribe : events.listeners.keySet()) {
+            for (SensorEventType typeEventFromSubscribe : events.getListeners().keySet()) {
                 if (typeEventFromSubscribe.equals(event.getType())) {
                     events.notify(event, smartHome);
                 }
             }
-            event = RandomSensorEventProvider.getNextSensorEvent();
+            event = sensorEventProvider.getNextSensorEvent();
         }
     }
 
