@@ -2,6 +2,7 @@ package ru.sbt.mipt.oop;
 
 import ru.sbt.mipt.oop.composite.Action;
 import ru.sbt.mipt.oop.composite.Executable;
+import ru.sbt.mipt.oop.entity.Alarm;
 import ru.sbt.mipt.oop.entity.Light;
 import ru.sbt.mipt.oop.entity.Room;
 import ru.sbt.mipt.oop.sensors.CommandType;
@@ -13,10 +14,13 @@ import java.util.Collection;
 
 public class SmartHome implements Executable {
 
+    private Alarm alarm;
+
     Collection<Room> rooms;
 
     public SmartHome() {
         rooms = new ArrayList<>();
+        alarm = new Alarm();
     }
 
     public SmartHome(Collection<Room> rooms) {
@@ -29,6 +33,10 @@ public class SmartHome implements Executable {
 
     public Collection<Room> getRooms() {
         return rooms;
+    }
+
+    public Alarm getAlarm() {
+        return alarm;
     }
 
     public void turnOffLights() {
