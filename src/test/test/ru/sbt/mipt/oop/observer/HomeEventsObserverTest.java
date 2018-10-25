@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 
 public class HomeEventsObserverTest {
 
-    CountingEventProcessor countingEventProcessor = new CountingEventProcessor();
+    private CountingEventProcessor countingEventProcessor = new CountingEventProcessor();
 
     public static class CountingEventProcessor implements EventProcessor {
 

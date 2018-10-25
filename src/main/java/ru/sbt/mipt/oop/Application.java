@@ -1,8 +1,6 @@
 package ru.sbt.mipt.oop;
 
-import ru.sbt.mipt.oop.eventprocessors.DoorEventProcessor;
-import ru.sbt.mipt.oop.eventprocessors.HallDoorEventProcessor;
-import ru.sbt.mipt.oop.eventprocessors.LightsEventProcessor;
+import ru.sbt.mipt.oop.eventprocessors.*;
 import ru.sbt.mipt.oop.observer.EventManager;
 import ru.sbt.mipt.oop.observer.HomeEventsObserver;
 import ru.sbt.mipt.oop.sensors.RandomSensorEventProvider;
@@ -36,6 +34,8 @@ public class Application {
         listenersManager.subscribe(SensorEventType.LIGHT_ON, new LightsEventProcessor());
         listenersManager.subscribe(SensorEventType.LIGHT_OFF, new LightsEventProcessor());
         listenersManager.subscribe(SensorEventType.DOOR_CLOSED, new HallDoorEventProcessor());
+        listenersManager.subscribe(SensorEventType.ALARM_ACTIVATED, new AlarmActivatedEventProcessor());
+        listenersManager.subscribe(SensorEventType.ALARM_DEACTIVATED, new AlarmDeactivatedEventProcessor());
 
         observer = new HomeEventsObserver(
                 new RandomSensorEventProvider(),
