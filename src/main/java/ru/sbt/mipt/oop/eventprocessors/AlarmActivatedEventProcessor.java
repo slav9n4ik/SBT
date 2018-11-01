@@ -6,6 +6,6 @@ import ru.sbt.mipt.oop.sensors.SensorEvent;
 public class AlarmActivatedEventProcessor implements EventProcessor {
     @Override
     public void processEvent(SmartHome smartHome, SensorEvent event) {
-        smartHome.getAlarm().activateAlarm();
+        smartHome.getAlarm().activate(event.getPassword());
     }
 }

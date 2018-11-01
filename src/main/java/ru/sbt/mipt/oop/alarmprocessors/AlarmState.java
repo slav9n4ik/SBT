@@ -1,23 +1,12 @@
 package ru.sbt.mipt.oop.alarmprocessors;
 
-import ru.sbt.mipt.oop.entity.Alarm;
-
-public class AlarmState implements State {
-
-    private Alarm alarm;
-
-    public AlarmState(Alarm alarm) {
-        this.alarm = alarm;
+public interface AlarmState {
+    default void activate(String password){
+    }
+    default void deactivate(String password){
+    }
+    default void startAlarm(){
     }
 
-
-    @Override
-    public void activate(String password) {
-
-    }
-
-    @Override
-    public void deactivate(String password) {
-
-    }
+    boolean isActivates();
 }
