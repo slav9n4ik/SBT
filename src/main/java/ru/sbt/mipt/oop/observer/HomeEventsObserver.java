@@ -1,43 +1,44 @@
 package ru.sbt.mipt.oop.observer;
 
+import com.coolcompany.smarthome.events.SensorEventsManager;
 import ru.sbt.mipt.oop.SmartHome;
+import ru.sbt.mipt.oop.sensors.AdapterFromApiEventToSensorEvent;
 import ru.sbt.mipt.oop.sensors.SensorEvent;
-import ru.sbt.mipt.oop.sensors.SensorEventProvider;
 import ru.sbt.mipt.oop.sensors.SensorEventType;
 
 public class HomeEventsObserver {
 
     private EventManager events;
-    private SensorEventProvider sensorEventProvider;
+    //private SensorEventProvider sensorEventProvider;
+    private SensorEventsManager sensorEventsManager;
 
-    public HomeEventsObserver(SensorEventProvider sensorEventProvider, EventManager events) {
+    public HomeEventsObserver(SensorEventsManager sensorEventsManager, EventManager events) {
         this.events = events;
-        this.sensorEventProvider = sensorEventProvider;
+        this.sensorEventsManager = sensorEventsManager;
     }
 
 
     public void runEventsCycle(SmartHome smartHome) {
-        SensorEvent event = sensorEventProvider.getNextSensorEvent();
-//        Collection<EventProcessor> eventProcessors = configureEventProcessors();
-        while (event != null) {
-            System.out.println("Got event: " + event);
-//            for (EventProcessor eventProcessor : eventProcessors) {
-//                eventProcessor.processEvent(smartHome, event);
-//            }
+        sensorEventsManager.registerEventHandler(apiEvent -> {
+            System.out.println("Event type [" + apiEvent.getEventType() + "] from object with id=" + apiEvent.getObjectId() + "]");
+            SensorEvent event = new AdapterFromApiEventToSensorEvent(apiEvent).getSensorEvent();
             for (SensorEventType typeEventFromSubscribe : events.getListeners().keySet()) {
                 if (typeEventFromSubscribe.equals(event.getType())) {
                     events.notify(event, smartHome);
                 }
             }
-            event = sensorEventProvider.getNextSensorEvent();
-        }
-    }
+        });
+        sensorEventsManager.start();
 
-//    public Collection<EventProcessor> configureEventProcessors() {
-//        Collection<EventProcessor> eventProcessors = new ArrayList<>();
-//        eventProcessors.add(new LightsEventProcessor());
-//        eventProcessors.add(new DoorEventProcessor());
-//        eventProcessors.add(new HallDoorEventProcessor());
-//        return eventProcessors;
-//    }
+        //SensorEvent event = sensorEventProvider.getNextSensorEvent();
+//        while (event != null) {
+//
+//            for (SensorEventType typeEventFromSubscribe : events.getListeners().keySet()) {
+//                if (typeEventFromSubscribe.equals(event.getType())) {
+//                    events.notify(event, smartHome);
+//                }
+//            }
+//            event = SensorEventProvider.getNextSensorEvent();
+//        }
+    }
 }
