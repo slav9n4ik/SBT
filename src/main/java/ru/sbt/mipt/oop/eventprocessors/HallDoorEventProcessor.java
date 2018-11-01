@@ -1,6 +1,7 @@
 package ru.sbt.mipt.oop.eventprocessors;
 
 import ru.sbt.mipt.oop.SmartHome;
+import ru.sbt.mipt.oop.entity.Door;
 import ru.sbt.mipt.oop.entity.Room;
 import ru.sbt.mipt.oop.sensors.SensorEvent;
 
@@ -18,7 +19,10 @@ public class HallDoorEventProcessor implements EventProcessor {
                         // если мы получили событие о закрытие двери в холле - это значит, что была закрыта входная дверь.
                         // в этом случае мы хотим автоматически выключить свет во всем доме (это же умный дом!)
                         if (room.getName().equals("hall")) {
-                            smartHome.turnOffLights();
+                            for(Door door : room.getDoors()) {
+                                if (event.getObjectId().equals(door.getId()))
+                                    smartHome.turnOffLights();
+                            }
 
                         }
                     }

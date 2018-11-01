@@ -2,7 +2,7 @@ package ru.sbt.mipt.oop;
 
 import ru.sbt.mipt.oop.composite.Action;
 import ru.sbt.mipt.oop.composite.Executable;
-import ru.sbt.mipt.oop.entity.Alarm;
+import ru.sbt.mipt.oop.alarmprocessors.Alarm;
 import ru.sbt.mipt.oop.entity.Light;
 import ru.sbt.mipt.oop.entity.Room;
 import ru.sbt.mipt.oop.sensors.CommandType;
