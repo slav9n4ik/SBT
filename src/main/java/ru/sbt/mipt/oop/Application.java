@@ -5,7 +5,7 @@ import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import ru.sbt.mipt.oop.config.SmartHomeConfig;
-import ru.sbt.mipt.oop.observer.HomeEventsObserver;
+import ru.sbt.mipt.oop.observer.EventsManager;
 
 import java.io.IOException;
 
@@ -17,9 +17,9 @@ public class Application {
         logger.info("Starting configuration...");
         ApplicationContext context = new AnnotationConfigApplicationContext(SmartHomeConfig.class);
         SmartHomeLoader smartHomeLoader = context.getBean(SmartHomeLoader.class);
-        HomeEventsObserver observer = context.getBean(HomeEventsObserver.class);
+        EventsManager eventsManager = context.getBean(EventsManager.class);
         SmartHome smartHome = smartHomeLoader.loadSmartHome();
-        observer.runEventsCycle(smartHome);
+        eventsManager.runEventsCycle(smartHome);
     }
 
 }
