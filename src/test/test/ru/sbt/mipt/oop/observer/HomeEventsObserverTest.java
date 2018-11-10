@@ -1,6 +1,5 @@
 package ru.sbt.mipt.oop.observer;
 
-import org.junit.Test;
 import ru.sbt.mipt.oop.SmartHome;
 import ru.sbt.mipt.oop.eventprocessors.EventProcessor;
 import ru.sbt.mipt.oop.sensors.SensorEvent;
@@ -49,7 +48,7 @@ public class HomeEventsObserverTest {
 
 //    @Test
 //    public void test() {
-//        EventManager listenerManager = new EventManager(SensorEventType.values());
+//        HandlerManager listenerManager = new HandlerManager(SensorEventType.values());
 //        makeNotifications(listenerManager);
 //        SensorEvent sensorEvent = new SensorEvent(SensorEventType.DOOR_CLOSED, "1");
 //        HomeEventsObserver homeEventsObserver = new HomeEventsObserver(
@@ -61,7 +60,7 @@ public class HomeEventsObserverTest {
 //        assertEquals(1, countingEventProcessor.getCount());
 //    }
 
-    private void makeNotifications(EventManager listenerManager) {
+    private void makeNotifications(HandlerManager listenerManager) {
         //listenerManager.subscribe(SensorEventType.DOOR_CLOSED, new DoorEventProcessor());
         //listenerManager.subscribe(SensorEventType.DOOR_CLOSED, new HallDoorEventProcessor());
         listenerManager.subscribe(SensorEventType.DOOR_CLOSED, countingEventProcessor);

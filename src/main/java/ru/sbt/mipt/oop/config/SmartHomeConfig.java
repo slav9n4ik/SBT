@@ -1,13 +1,13 @@
 package ru.sbt.mipt.oop.config;
 
-import com.coolcompany.smarthome.events.SensorEventsManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import ru.sbt.mipt.oop.FileSmartHomeLoader;
 import ru.sbt.mipt.oop.SmartHomeLoader;
 import ru.sbt.mipt.oop.eventprocessors.*;
-import ru.sbt.mipt.oop.observer.EventManager;
-import ru.sbt.mipt.oop.observer.HomeEventsObserver;
+import ru.sbt.mipt.oop.observer.AdapterFromObserverEventManagerToApiEventManager;
+import ru.sbt.mipt.oop.observer.HandlerManager;
+import ru.sbt.mipt.oop.observer.EventsManager;
 import ru.sbt.mipt.oop.sensors.SensorEventType;
 
 /**
@@ -16,18 +16,26 @@ import ru.sbt.mipt.oop.sensors.SensorEventType;
 @Configuration
 public class SmartHomeConfig {
 
-    private EventManager listenersManager =  new EventManager(SensorEventType.values());
+    private HandlerManager listenersManager =  new HandlerManager(SensorEventType.values());
 
     @Bean
     SmartHomeLoader smartHomeLoader() {
         return new FileSmartHomeLoader();
     }
 
+    //Реализация EventsManager через API
     @Bean
-    HomeEventsObserver observer() {
+    EventsManager eventsManager() {
         makeNotifications();
-        return new HomeEventsObserver(new SensorEventsManager(), listenersManager);
+        return new AdapterFromObserverEventManagerToApiEventManager(listenersManager);
     }
+
+//    Реализация EventsManager через Observer
+//    @Bean
+//    EventsManager eventsManager() {
+//        makeNotifications();
+//        return new HomeEventsObserver(new RandomSensorEventProvider(), listenersManager);
+//    }
 
     private void makeNotifications() {
         listenersManager.subscribe(SensorEventType.DOOR_OPEN, new AlarmAwareEventProcessor(new DoorEventProcessor()));

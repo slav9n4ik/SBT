@@ -1,15 +1,12 @@
 package ru.sbt.mipt.oop;
 
-import org.junit.Test;
 import ru.sbt.mipt.oop.eventprocessors.AlarmActivatedEventProcessor;
 import ru.sbt.mipt.oop.eventprocessors.DoorEventProcessor;
-import ru.sbt.mipt.oop.observer.EventManager;
-import ru.sbt.mipt.oop.observer.HomeEventsObserver;
+import ru.sbt.mipt.oop.observer.HandlerManager;
 import ru.sbt.mipt.oop.sensors.SensorEvent;
 import ru.sbt.mipt.oop.sensors.SensorEventProvider;
 import ru.sbt.mipt.oop.sensors.SensorEventType;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -39,7 +36,7 @@ public class AlarmTest {
 
 //    @Test
 //    public void testAlarmState() {
-//        EventManager listenerManager = new EventManager(SensorEventType.values());
+//        HandlerManager listenerManager = new HandlerManager(SensorEventType.values());
 //        makeNotifications(listenerManager);
 //
 //        ArrayList<SensorEvent> events = new ArrayList<>();
@@ -55,7 +52,7 @@ public class AlarmTest {
 //        assertEquals(true, smartHome.getAlarm().isActivated());
 //    }
 
-    private void makeNotifications(EventManager listenerManager) {
+    private void makeNotifications(HandlerManager listenerManager) {
         listenerManager.subscribe(SensorEventType.ALARM_ACTIVATED, new AlarmActivatedEventProcessor());
         listenerManager.subscribe(SensorEventType.DOOR_CLOSED, new DoorEventProcessor());
     }

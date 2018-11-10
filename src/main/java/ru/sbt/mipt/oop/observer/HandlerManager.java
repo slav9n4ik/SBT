@@ -10,10 +10,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class EventManager {
+public class HandlerManager {
     private Map<SensorEventType, List<EventProcessor>> listeners = new HashMap<>();
 
-    public EventManager(SensorEventType[] operations) {
+    public HandlerManager(SensorEventType[] operations) {
         for (SensorEventType operation : operations) {
             this.listeners.put(operation, new ArrayList<>());
         }
@@ -24,11 +24,11 @@ public class EventManager {
         processors.add(listener);
     }
 
-    public void unsubscribe(SensorEventType eventType, EventProcessor listener) {
-        List<EventProcessor> users = listeners.get(eventType);
-        int index = users.indexOf(listener);
-        users.remove(index);
-    }
+//    public void unsubscribe(SensorEventType eventType, EventProcessor listener) {
+//        List<EventProcessor> users = listeners.get(eventType);
+//        int index = users.indexOf(listener);
+//        users.remove(index);
+//    }
 
     public void notify(SensorEvent event, SmartHome smartHome) {
         List<EventProcessor> processors = listeners.get(event.getType());
