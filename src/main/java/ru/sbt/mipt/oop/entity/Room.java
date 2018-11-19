@@ -1,8 +1,11 @@
-package ru.sbt.mipt.oop;
+package ru.sbt.mipt.oop.entity;
+
+import ru.sbt.mipt.oop.composite.Action;
+import ru.sbt.mipt.oop.composite.Executable;
 
 import java.util.Collection;
 
-public class Room {
+public class Room implements Executable {
     private Collection<Light> lights;
     private Collection<Door> doors;
     private String name;
@@ -23,5 +26,18 @@ public class Room {
 
     public String getName() {
         return name;
+    }
+
+    public Light getLightById(String objectId) {
+        return null;
+    }
+
+    @Override
+    public void execute(Action action) {
+        action.executeAction(this);
+        for (Door door : this.getDoors())
+            door.execute(action);
+        for (Light light : this.getLights())
+            light.execute(action);
     }
 }

@@ -1,0 +1,59 @@
+package ru.sbt.mipt.oop;
+
+import ru.sbt.mipt.oop.eventprocessors.AlarmActivatedEventProcessor;
+import ru.sbt.mipt.oop.eventprocessors.DoorEventProcessor;
+import ru.sbt.mipt.oop.observer.HandlerManager;
+import ru.sbt.mipt.oop.sensors.SensorEvent;
+import ru.sbt.mipt.oop.sensors.SensorEventProvider;
+import ru.sbt.mipt.oop.sensors.SensorEventType;
+
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+
+public class AlarmTest {
+
+    public static class EventProvider implements SensorEventProvider {
+
+        private int callsCount = 0;
+        private List<SensorEvent> sensorEvent;
+
+        public EventProvider(List<SensorEvent> sensorEvent) {
+            this.sensorEvent = sensorEvent;
+        }
+
+        @Override
+        public SensorEvent getNextSensorEvent() {
+            if (callsCount < sensorEvent.size()) {
+                callsCount++;
+                return sensorEvent.get(callsCount-1);
+            }
+            else {
+                return null;
+            }
+        }
+    }
+
+//    @Test
+//    public void testAlarmState() {
+//        HandlerManager listenerManager = new HandlerManager(SensorEventType.values());
+//        makeNotifications(listenerManager);
+//
+//        ArrayList<SensorEvent> events = new ArrayList<>();
+//        events.add(new SensorEvent(SensorEventType.ALARM_ACTIVATED, "1"));
+//        events.add(new SensorEvent(SensorEventType.DOOR_CLOSED, "1"));
+//        HomeEventsObserver homeEventsObserver = new HomeEventsObserver(
+//                new AlarmTest.EventProvider(events),
+//                listenerManager
+//        );
+//
+//        SmartHome smartHome = new SmartHome();
+//        homeEventsObserver.runEventsCycle(smartHome);
+//        assertEquals(true, smartHome.getAlarm().isActivated());
+//    }
+
+    private void makeNotifications(HandlerManager listenerManager) {
+        listenerManager.subscribe(SensorEventType.ALARM_ACTIVATED, new AlarmActivatedEventProcessor());
+        listenerManager.subscribe(SensorEventType.DOOR_CLOSED, new DoorEventProcessor());
+    }
+}
