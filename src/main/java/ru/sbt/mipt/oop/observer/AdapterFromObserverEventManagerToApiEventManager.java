@@ -19,7 +19,6 @@ public class AdapterFromObserverEventManagerToApiEventManager implements EventsM
     @Override
     public void runEventsCycle(SmartHome smartHome) {
         sensorEventsManager.registerEventHandler(apiEvent -> {
-            System.out.println("Event type [" + apiEvent.getEventType() + "] from object with id=" + apiEvent.getObjectId() + "]");
             SensorEvent event = new AdapterFromApiEventToSensorEvent(apiEvent).getSensorEvent();
             for (SensorEventType typeEventFromSubscribe : events.getListeners().keySet()) {
                 if (typeEventFromSubscribe.equals(event.getType())) {

@@ -2,7 +2,8 @@ package ru.sbt.mipt.oop.sensors;
 
 import com.coolcompany.smarthome.events.CCSensorEvent;
 
-public class AdapterFromApiEventToSensorEvent {
+public class
+AdapterFromApiEventToSensorEvent {
 
     private CCSensorEvent apiEvent;
 

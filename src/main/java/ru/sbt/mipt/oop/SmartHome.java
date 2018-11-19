@@ -39,11 +39,17 @@ public class SmartHome implements Executable {
         return alarm;
     }
 
-    public void turnOffLights() {
+    public void turnLightStateInAllRooms(boolean state) {
         for (Room homeRoom : getRooms()) {
             for (Light light : homeRoom.getLights()) {
-                light.setOn(false);
-                SensorCommand command = new SensorCommand(CommandType.LIGHT_OFF, light.getId());
+                SensorCommand command;
+                if (state) {
+                    light.setOn(true);
+                    command = new SensorCommand(CommandType.LIGHT_ON, light.getId());
+                } else {
+                    light.setOn(false);
+                    command = new SensorCommand(CommandType.LIGHT_OFF, light.getId());
+                }
                 SensorCommandExecutor.executeCommand(command);
             }
         }

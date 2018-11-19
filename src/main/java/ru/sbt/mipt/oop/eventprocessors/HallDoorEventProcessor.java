@@ -21,7 +21,7 @@ public class HallDoorEventProcessor implements EventProcessor {
                         if (room.getName().equals("hall")) {
                             for(Door door : room.getDoors()) {
                                 if (event.getObjectId().equals(door.getId()))
-                                    smartHome.turnOffLights();
+                                    smartHome.turnLightStateInAllRooms(false);
                             }
 
                         }
