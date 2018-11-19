@@ -21,7 +21,7 @@ public class HomeEventsObserver implements EventsManager{
 
         SensorEvent event = sensorEventProvider.getNextSensorEvent();
         while (event != null) {
-
+            System.out.println("Event type [" + event.getType() + "] from object with id=" + event.getObjectId() + "]");
             for (SensorEventType typeEventFromSubscribe : events.getListeners().keySet()) {
                 if (typeEventFromSubscribe.equals(event.getType())) {
                     events.notify(event, smartHome);

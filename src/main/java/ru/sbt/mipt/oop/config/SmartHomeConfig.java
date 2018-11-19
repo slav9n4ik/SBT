@@ -8,6 +8,8 @@ import ru.sbt.mipt.oop.eventprocessors.*;
 import ru.sbt.mipt.oop.observer.AdapterFromObserverEventManagerToApiEventManager;
 import ru.sbt.mipt.oop.observer.HandlerManager;
 import ru.sbt.mipt.oop.observer.EventsManager;
+import ru.sbt.mipt.oop.observer.HomeEventsObserver;
+import ru.sbt.mipt.oop.sensors.RandomSensorEventProvider;
 import ru.sbt.mipt.oop.sensors.SensorEventType;
 
 /**
@@ -24,18 +26,18 @@ public class SmartHomeConfig {
     }
 
     //Реализация EventsManager через API
-    @Bean
-    EventsManager eventsManager() {
-        makeNotifications();
-        return new AdapterFromObserverEventManagerToApiEventManager(listenersManager);
-    }
-
-//    Реализация EventsManager через Observer
 //    @Bean
 //    EventsManager eventsManager() {
 //        makeNotifications();
-//        return new HomeEventsObserver(new RandomSensorEventProvider(), listenersManager);
+//        return new AdapterFromObserverEventManagerToApiEventManager(listenersManager);
 //    }
+
+//    Реализация EventsManager через Observer
+    @Bean
+    EventsManager eventsManager() {
+        makeNotifications();
+        return new HomeEventsObserver(new RandomSensorEventProvider(), listenersManager);
+    }
 
     private void makeNotifications() {
         listenersManager.subscribe(SensorEventType.DOOR_OPEN, new AlarmAwareEventProcessor(new DoorEventProcessor()));
