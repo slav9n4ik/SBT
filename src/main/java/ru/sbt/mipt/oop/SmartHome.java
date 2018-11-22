@@ -16,7 +16,7 @@ public class SmartHome implements Executable {
 
     private Alarm alarm;
 
-    Collection<Room> rooms;
+    private Collection<Room> rooms;
 
     public SmartHome() {
         rooms = new ArrayList<>();
@@ -27,7 +27,7 @@ public class SmartHome implements Executable {
         this.rooms = rooms;
     }
 
-    public void addRoom(Room room) {
+    void addRoom(Room room) {
         rooms.add(room);
     }
 

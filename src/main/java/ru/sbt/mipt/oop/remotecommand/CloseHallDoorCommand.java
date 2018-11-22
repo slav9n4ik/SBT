@@ -26,11 +26,10 @@ public class CloseHallDoorCommand implements UndoubleCommand {
         for (Room room : smartHome.getRooms()) {
             for (Door door : room.getDoors()) {
                 if (room.getName().equals("hall")) {
+                    door.setOpen(state);
                     if(state) {
-                        door.setOpen(state);
                         System.out.println("Door " + door.getId() + " was opened");
                     } else {
-                        door.setOpen(!state);
                         System.out.println("Door " + door.getId() + " was closed");
                     }
                 }

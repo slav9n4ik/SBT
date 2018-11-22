@@ -20,23 +20,21 @@ public class Application {
     public static void main(String... args) throws IOException {
         logger.info("Starting configuration...");
         ApplicationContext context = new AnnotationConfigApplicationContext(SmartHomeConfig.class);
+
+        //Откуда загружать дом можно выбрать в конфигах
         SmartHomeLoader smartHomeLoader = context.getBean(SmartHomeLoader.class);
-        EventsManager eventsManager = context.getBean(EventsManager.class);
         SmartHome smartHome = smartHomeLoader.loadSmartHome();
 
-        RemoteControlRegistry remoteControlRegistry = new RemoteControlRegistry();
-        SmartHomeRemoteControl smartHomeRemoteControl = setUpPult1(smartHome);
+        //RandomEventsProvider или Api можно выбрать в конфигах
+        EventsManager eventsManager = context.getBean(EventsManager.class);
+
+        //Загрузка из конфигов пульта и его регистрация
+        RemoteControlRegistry remoteControlRegistry = context.getBean(RemoteControlRegistry.class);
+        SmartHomeRemoteControl smartHomeRemoteControl = context.getBean(SmartHomeRemoteControl.class);
         remoteControlRegistry.registerRemoteControl(smartHomeRemoteControl, "1");
 
         eventsManager.runEventsCycle(smartHome);
     }
 
-    private static SmartHomeRemoteControl setUpPult1(SmartHome smartHome) {
-        CommandHistory commandHistory = new CommandHistory();
-        SmartHomeRemoteControl smartHomeRemoteControl = new SmartHomeRemoteControl(commandHistory, "1");
-        smartHomeRemoteControl.addCommandOnButton("A",
-                new AllLightOffCommand(smartHome));
-        return smartHomeRemoteControl;
-    }
 
 }

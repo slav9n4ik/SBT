@@ -2,6 +2,7 @@ package ru.sbt.mipt.oop;
 
 import org.junit.Test;
 import ru.sbt.mipt.oop.entity.Door;
+import ru.sbt.mipt.oop.entity.Light;
 import ru.sbt.mipt.oop.entity.Room;
 import ru.sbt.mipt.oop.eventprocessors.*;
 import ru.sbt.mipt.oop.observer.HandlerManager;
@@ -14,9 +15,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
-public class AlarmTest {
+public class CompositeAndIteratorTest {
 
     public static class EventProvider implements SensorEventProvider {
 
@@ -40,28 +41,41 @@ public class AlarmTest {
     }
 
     @Test
-    public void testAlarmState() throws IOException {
+    public void testDoorState() throws IOException {
         HandlerManager listenerManager = new HandlerManager(SensorEventType.values());
         makeNotifications(listenerManager);
 
         ArrayList<SensorEvent> events = new ArrayList<>();
+
+        events.add(new SensorEvent(SensorEventType.LIGHT_ON, "1"));
+        events.add(new SensorEvent(SensorEventType.LIGHT_ON, "2"));
+        events.add(new SensorEvent(SensorEventType.LIGHT_ON, "3"));
+        events.add(new SensorEvent(SensorEventType.LIGHT_ON, "4"));
+        events.add(new SensorEvent(SensorEventType.LIGHT_ON, "5"));
+        events.add(new SensorEvent(SensorEventType.LIGHT_ON, "6"));
+
+        events.add(new SensorEvent(SensorEventType.DOOR_CLOSED, "1"));
+        events.add(new SensorEvent(SensorEventType.DOOR_CLOSED, "2"));
         events.add(new SensorEvent(SensorEventType.DOOR_CLOSED, "3"));
-        events.add(new SensorEvent(SensorEventType.ALARM_ACTIVATED, "1"));
-        events.add(new SensorEvent(SensorEventType.DOOR_OPEN, "3"));
-        events.add(new SensorEvent(SensorEventType.DOOR_CLOSED, "3"));
+        events.add(new SensorEvent(SensorEventType.DOOR_CLOSED, "4"));
+
         HomeEventsObserver homeEventsObserver = new HomeEventsObserver(
-                new AlarmTest.EventProvider(events),
+                new CompositeAndIteratorTest.EventProvider(events),
                 listenerManager
         );
 
         SmartHome smartHome = new FileSmartHomeLoader().loadSmartHome();
         homeEventsObserver.runEventsCycle(smartHome);
-        assertEquals(true, smartHome.getAlarm().isActivated());
+
         for (Room room : smartHome.getRooms()) {
             for (Door door : room.getDoors()) {
-                if (door.getId().equals("4")) {
-                    assertEquals(false, door.isOpen());
-                }
+                assertFalse(door.isOpen());
+            }
+        }
+
+        for (Room room : smartHome.getRooms()) {
+            for (Light light : room.getLights()) {
+                assertFalse(light.isOn());
             }
         }
     }
@@ -69,8 +83,8 @@ public class AlarmTest {
     private void makeNotifications(HandlerManager listenersManager) {
         listenersManager.subscribe(SensorEventType.DOOR_OPEN, new AlarmAwareEventProcessor(new DoorEventProcessor()));
         listenersManager.subscribe(SensorEventType.DOOR_CLOSED, new AlarmAwareEventProcessor(new DoorEventProcessor()));
+        listenersManager.subscribe(SensorEventType.LIGHT_ON, new AlarmAwareEventProcessor(new LightsEventProcessor()));
+        listenersManager.subscribe(SensorEventType.LIGHT_OFF, new AlarmAwareEventProcessor(new LightsEventProcessor()));
         listenersManager.subscribe(SensorEventType.DOOR_CLOSED, new AlarmAwareEventProcessor(new HallDoorEventProcessor()));
-        listenersManager.subscribe(SensorEventType.ALARM_ACTIVATED, new AlarmActivatedEventProcessor());
-        listenersManager.subscribe(SensorEventType.ALARM_DEACTIVATED, new AlarmDeactivatedEventProcessor());
     }
 }

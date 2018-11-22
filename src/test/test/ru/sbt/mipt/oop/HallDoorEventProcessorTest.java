@@ -35,7 +35,7 @@ public class HallDoorEventProcessorTest {
 
         for (Room room : smartHome.getRooms()) {
             for (Light light : room.getLights()) {
-                assertEquals(false, light.isOn());
+                assertFalse(light.isOn());
             }
         }
 

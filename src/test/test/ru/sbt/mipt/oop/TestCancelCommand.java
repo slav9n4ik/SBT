@@ -17,21 +17,6 @@ import static org.junit.Assert.assertTrue;
 
 public class TestCancelCommand {
 
-    public static class MyTestCommand implements UndoubleCommand {
-
-        private boolean done = false;
-
-        @Override
-        public void undo() {
-            done = false;
-        }
-
-        @Override
-        public void execute() {
-            done = true;
-        }
-    }
-
     @Test
     public void testCancelCommand() throws IOException {
         CommandHistory commandHistory = new CommandHistory();
