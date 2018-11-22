@@ -9,7 +9,6 @@ public class HomeEventsObserver implements EventsManager{
 
     private HandlerManager events;
     private SensorEventProvider sensorEventProvider;
-//    private SensorEventsManager sensorEventsManager;
 
     public HomeEventsObserver(SensorEventProvider sensorEventProvider, HandlerManager events) {
         this.events = events;

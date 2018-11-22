@@ -1,17 +1,17 @@
-package ru.sbt.mipt.oop.sensors;
+package ru.sbt.mipt.oop.adapter;
 
 import com.coolcompany.smarthome.events.CCSensorEvent;
+import ru.sbt.mipt.oop.sensors.SensorEvent;
+import ru.sbt.mipt.oop.sensors.SensorEventType;
 
-public class
-AdapterFromApiEventToSensorEvent {
+public class AdapterFromApiEventToSensorEvent {
 
     private CCSensorEvent apiEvent;
 
-    public AdapterFromApiEventToSensorEvent(CCSensorEvent apiEvent) {
+    AdapterFromApiEventToSensorEvent(CCSensorEvent apiEvent) {
         this.apiEvent = apiEvent;
     }
 
-    //Это надо как-то исправить
     private SensorEventType transformTypes(String eventType) {
         switch (eventType) {
             case("LightIsOn"):

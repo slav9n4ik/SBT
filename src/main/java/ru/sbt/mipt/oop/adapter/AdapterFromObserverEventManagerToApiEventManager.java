@@ -1,12 +1,13 @@
-package ru.sbt.mipt.oop.observer;
+package ru.sbt.mipt.oop.adapter;
 
 import com.coolcompany.smarthome.events.SensorEventsManager;
 import ru.sbt.mipt.oop.SmartHome;
-import ru.sbt.mipt.oop.sensors.AdapterFromApiEventToSensorEvent;
+import ru.sbt.mipt.oop.observer.EventsManager;
+import ru.sbt.mipt.oop.observer.HandlerManager;
 import ru.sbt.mipt.oop.sensors.SensorEvent;
 import ru.sbt.mipt.oop.sensors.SensorEventType;
 
-public class AdapterFromObserverEventManagerToApiEventManager implements EventsManager{
+public class AdapterFromObserverEventManagerToApiEventManager implements EventsManager {
 
     private SensorEventsManager sensorEventsManager;
     private HandlerManager events;
