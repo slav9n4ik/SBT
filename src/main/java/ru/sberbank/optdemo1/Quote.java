@@ -1,8 +1,13 @@
 package ru.sberbank.optdemo1;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
 import java.util.Date;
 
+@Getter
+@Setter
 public class Quote implements Serializable {
 
     private String ticker;
@@ -28,81 +33,9 @@ public class Quote implements Serializable {
         this.waprice = waprice;
     }
 
-    public String getTicker() {
-        return ticker;
-    }
-
-    public void setTicker(String ticker) {
-        this.ticker = ticker;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public Double getOpen() {
-        return open;
-    }
-
-    public void setOpen(Double open) {
-        this.open = open;
-    }
-
-    public Double getHigh() {
-        return high;
-    }
-
-    public void setHigh(Double high) {
-        this.high = high;
-    }
-
-    public Double getLow() {
-        return low;
-    }
-
-    public void setLow(Double low) {
-        this.low = low;
-    }
-
-    public Double getClose() {
-        return close;
-    }
-
-    public void setClose(Double close) {
-        this.close = close;
-    }
-
-    public Long getVolume() {
-        return volume;
-    }
-
-    public void setVolume(Long volume) {
-        this.volume = volume;
-    }
-
-    public Double getWaprice() {
-        return waprice;
-    }
-
-    public void setWaprice(Double waprice) {
-        this.waprice = waprice;
-    }
-
-    public Double getMaxInMonth() {
-        return maxInMonth;
-    }
-
     public Quote setMaxInMonth(Double maxInMonth) {
         this.maxInMonth = maxInMonth;
         return this;
-    }
-
-    public Double getMaxInYear() {
-        return maxInYear;
     }
 
     public Quote setMaxInYear(Double maxInYear) {

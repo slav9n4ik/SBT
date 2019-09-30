@@ -1,19 +1,16 @@
 package ru.sberbank.optdemo1;
 
-import org.HdrHistogram.AtomicHistogram;
-import org.HdrHistogram.Histogram;
 import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -21,12 +18,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
 
 @Component
 public class QuoteCaching implements ApplicationListener<ApplicationReadyEvent> {
 
-    private final Histogram histogram = new AtomicHistogram(TimeUnit.MINUTES.toNanos(5), 3);
+    @Autowired
+    public HistogramWriter histogram;
 
     private Logger log = LoggerFactory.getLogger(QuoteCaching.class);
 
@@ -84,41 +81,20 @@ public class QuoteCaching implements ApplicationListener<ApplicationReadyEvent> 
             log.info("key: " + k + " " + v.toString());
         });
 
-        requestYourSelf(client, 10000);
+        requestYourSelf(client, 1000);
 
-        try {
-            emit(new File("./myLog.txt"), histogram);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        histogram.emit(new File("./myLog.txt"));
         return;
     }
 
     private void requestYourSelf(AsyncHttpClient client, int times) {
         for (int i = 0; i < times; i++) {
             log.info("Request: " + i);
-            try (AutoCloseable ignored = wrap(histogram)){
+            try (AutoCloseable ignored = histogram.wrap()){
                 client.prepareGet("http://localhost:8080/demo1/quotes?days=30").execute().get();
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
-    }
-
-    private AutoCloseable wrap(Histogram h) {
-        return new AutoCloseable() {
-            long start = System.nanoTime();
-            @Override
-            public void close() throws Exception {
-                long end = System.nanoTime();
-                h.recordValue(end - start);
-            }
-        };
-    }
-
-    private static void emit(File resultsFile, Histogram results) throws IOException {
-        try (FileOutputStream fout = new FileOutputStream(resultsFile)) {
-            results.outputPercentileDistribution(new PrintStream(fout), 1000000.0);
         }
     }
 }
