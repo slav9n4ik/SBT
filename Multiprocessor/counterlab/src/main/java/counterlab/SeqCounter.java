@@ -1,6 +1,4 @@
-package ru.sbt.counters.hw;
-
-import ru.sbt.counters.hw.Counter;
+package counterlab;
 
 public class SeqCounter implements Counter {
     private long value;

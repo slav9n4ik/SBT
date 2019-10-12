@@ -1,4 +1,4 @@
-package ru.sbt.counters.hw;
+package counterlab;
 
 public interface Counter {
     void increment();

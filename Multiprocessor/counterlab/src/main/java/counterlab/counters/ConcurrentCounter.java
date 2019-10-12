@@ -1,10 +1,10 @@
-package ru.sbt.counters.hw.counters;
+package counterlab.counters;
 
-import ru.sbt.counters.hw.Counter;
+import counterlab.Counter;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-public class AtomicCounter implements Counter {
+public class ConcurrentCounter implements Counter {
 
     private AtomicLong atomicLong = new AtomicLong();
 
