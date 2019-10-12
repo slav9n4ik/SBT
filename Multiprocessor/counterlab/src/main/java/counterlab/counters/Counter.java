@@ -1,4 +1,4 @@
-package counterlab;
+package counterlab.counters;
 
 public interface Counter {
     void increment();

@@ -1,7 +1,6 @@
 package counterlab;
 
-import counterlab.counters.ConcurrentCounter;
-import counterlab.counters.MutexCounter;
+import counterlab.counters.*;
 import org.junit.Test;
 
 import java.util.List;
@@ -19,14 +18,14 @@ public class CounterTest {
 
     @Test
     public void testSequentialExecution() {
-        Counter counter = new SeqCounter();
+        Counter counter = new SeqCounterImpl();
         int incrementCallsCount = 1418800;
         testCounter(counter, incrementCallsCount, false);
     }
 
     @Test
     public void concurrentCounterTest() {
-        Counter counter = new ConcurrentCounter();
+        Counter counter = new ConcurrentCounterImpl();
         int incrementCallsCount = 1418800;
         testCounter(counter, incrementCallsCount, true);
 
@@ -34,7 +33,14 @@ public class CounterTest {
 
     @Test
     public void mutexCounterTest() {
-        Counter counter = new MutexCounter();
+        Counter counter = new MutexCounterImpl();
+        int incrementCallsCount = 1418000;
+        testCounter(counter, incrementCallsCount, true);
+    }
+
+    @Test
+    public void lockCounterTest() {
+        Counter counter = new LockCounterImpl();
         int incrementCallsCount = 1418000;
         testCounter(counter, incrementCallsCount, true);
     }

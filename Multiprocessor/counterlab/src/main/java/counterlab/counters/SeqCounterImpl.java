@@ -1,6 +1,6 @@
-package counterlab;
+package counterlab.counters;
 
-public class SeqCounter implements Counter {
+public class SeqCounterImpl implements Counter {
     private long value;
     @Override
     public void increment() {

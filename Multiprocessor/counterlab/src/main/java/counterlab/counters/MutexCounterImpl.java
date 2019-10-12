@@ -1,8 +1,6 @@
 package counterlab.counters;
 
-import counterlab.Counter;
-
-public class MutexCounter implements Counter {
+public class MutexCounterImpl implements Counter {
 
     private long count;
 

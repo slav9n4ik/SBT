@@ -2,22 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f29ce6b0-ac64-42f2-9cf7-a1f9f884edc5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/counterlab/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/counterlab.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/counterlab.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/counterlab/counters/LockCounterImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/counterlab/ru/sbt/counters/hw/Counter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/counterlab/ru/sbt/counters/hw/SeqCounter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/counterlab/ru/sbt/counters/hw/counters/AtomicCounter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/counterlab/ru/sbt/counters/hw/counters/ConcurrentCounter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test/counterlab/CounterTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sbt/counters/hw/Counter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/counterlab/Counter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sbt/counters/hw/SeqCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/counterlab/SeqCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sbt/counters/hw/counters/AtomicCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/counterlab/counters/ConcurrentCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sbt/counters/hw/counters/ConcurrentCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/counterlab/counters/MutexCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CounterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/counterlab/CounterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/counterlab/Counter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/counterlab/counters/Counter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/counterlab/SeqCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/counterlab/counters/SeqCounterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/counterlab/counters/ConcurrentCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/counterlab/counters/ConcurrentCounterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/counterlab/counters/MutexCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/counterlab/counters/MutexCounterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/counterlab/CounterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/counterlab/CounterTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/counterlab/CounterTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="304">
-              <caret line="37" column="38" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+              <caret line="39" column="38" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2404#2405#0" expanded="true" />
@@ -43,28 +34,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/MutexCounter.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/LockCounterImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+            <state relative-caret-position="361">
+              <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
               <folding>
-                <element signature="e#182#183#0" expanded="true" />
-                <element signature="e#212#213#0" expanded="true" />
-                <element signature="e#266#267#0" expanded="true" />
-                <element signature="e#293#294#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/ConcurrentCounter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#559#560#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,6 +56,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="slav9n4ik &lt;slava.tresnevv@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="IdeDocumentHistory">
@@ -95,6 +76,8 @@
         <option value="$PROJECT_DIR$/src/test/java/CounterTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/counterlab/counters/MutexCounter.java" />
         <option value="$PROJECT_DIR$/src/test/java/counterlab/CounterTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/counterlab/counters/LockCounter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/counterlab/counters/LockCounterImpl.java" />
       </list>
     </option>
   </component>
@@ -151,19 +134,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="counterlab" type="462c0819:PsiDirectoryNode" />
               <item name="counters" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="counterlab" type="b2602c69:ProjectViewProjectNode" />
-              <item name="counterlab" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="counterlab" type="b2602c69:ProjectViewProjectNode" />
-              <item name="counterlab" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -253,7 +223,7 @@
       <module name="counterlab" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="counterlab.*" />
+          <option name="PATTERN" value="counterlab.counters.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -285,14 +255,19 @@
       <option name="presentableId" value="Default" />
       <updated>1570809007139</updated>
       <workItem from="1570809008838" duration="738000" />
-      <workItem from="1570863191403" duration="4283000" />
+      <workItem from="1570863191403" duration="5379000" />
     </task>
+    <task id="LOCAL-00001" summary="ConcurrentCounter + MutexCounter + Tests">
+      <created>1570869764774</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1570869764775</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CounterTest - 2019.10.12 at 11h 25m 11s.xml">
-      <configuration name="CounterTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CounterTest - 2019.10.12 at 11h 25m 17s.xml">
       <configuration name="CounterTest" configurationId="JUnit" />
     </history-entry>
@@ -320,15 +295,18 @@
     <history-entry file="CounterTest - 2019.10.12 at 11h 39m 49s.xml">
       <configuration name="CounterTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CounterTest - 2019.10.12 at 11h 40m 32s.xml">
+      <configuration name="CounterTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5021000" />
+    <option name="totallyTimeSpent" value="6117000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19423692" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19423692" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -337,7 +315,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3295964" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3295964" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.25224215" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -365,14 +343,11 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ConcurrentCounter + MutexCounter + Tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="ConcurrentCounter + MutexCounter + Tests" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/SeqCounter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -380,27 +355,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/Counter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/ConcurrentCounterImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/ConcurrentCounter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        <state relative-caret-position="152">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/MutexCounter.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/counterlab/CounterTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+        <state relative-caret-position="304">
+          <caret line="39" column="38" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2404#2405#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/MutexCounterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
           <folding>
             <element signature="e#182#183#0" expanded="true" />
             <element signature="e#212#213#0" expanded="true" />
@@ -410,13 +389,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/counterlab/CounterTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/Counter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="37" column="38" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+        <state relative-caret-position="38">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/SeqCounterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/LockCounterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2404#2405#0" expanded="true" />
+            <element signature="e#559#560#0" expanded="true" />
           </folding>
         </state>
       </provider>

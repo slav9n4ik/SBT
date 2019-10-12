@@ -1,10 +1,8 @@
 package counterlab.counters;
 
-import counterlab.Counter;
-
 import java.util.concurrent.atomic.AtomicLong;
 
-public class ConcurrentCounter implements Counter {
+public class ConcurrentCounterImpl implements Counter {
 
     private AtomicLong atomicLong = new AtomicLong();
 
