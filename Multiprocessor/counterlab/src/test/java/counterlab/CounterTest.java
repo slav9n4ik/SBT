@@ -34,19 +34,19 @@ public class CounterTest {
     @Test
     public void mutexCounterTest() {
         Counter counter = new MutexCounterImpl();
-        int incrementCallsCount = 1418000;
+        int incrementCallsCount = 1418800;
         testCounter(counter, incrementCallsCount, true);
     }
 
     @Test
     public void lockCounterTest() {
         Counter counter = new LockCounterImpl();
-        int incrementCallsCount = 1418000;
+        int incrementCallsCount = 1418800;
         testCounter(counter, incrementCallsCount, true);
     }
 
     private void testCounter(Counter counter, int incrementCallsCount, boolean assertTrue) {
-        ExecutorService executors = Executors.newFixedThreadPool(15);
+        ExecutorService executors = Executors.newFixedThreadPool(4);
 
         List<Future> futures = range(0, incrementCallsCount)
                 .mapToObj(i -> executors.submit(incrementRunnable(counter)))

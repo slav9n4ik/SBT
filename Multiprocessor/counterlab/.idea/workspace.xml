@@ -2,14 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f29ce6b0-ac64-42f2-9cf7-a1f9f884edc5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/counterlab/counters/LockCounterImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/counterlab/benchmarks/MyBenchmark.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/counterlab/counters/MagicCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/counterlab.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/counterlab.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/counterlab/Counter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/counterlab/counters/Counter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/counterlab/SeqCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/counterlab/counters/SeqCounterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/counterlab/counters/ConcurrentCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/counterlab/counters/ConcurrentCounterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/counterlab/counters/MutexCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/counterlab/counters/MutexCounterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/counterlab/META-INF/counterlab.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/counterlab/counterlab/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test/counterlab/META-INF/counterlab.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test/counterlab/counterlab/CounterTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/counterlab/counters/MutexCounterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/counterlab/counters/MutexCounterImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/counterlab/CounterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/counterlab/CounterTest.java" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,24 +30,36 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/counterlab/CounterTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="39" column="38" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
+            <state relative-caret-position="394">
+              <caret line="77" column="34" selection-start-line="77" selection-start-column="34" selection-end-line="77" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2404#2405#0" expanded="true" />
+                <element signature="e#2519#2520#0" expanded="true" />
+                <element signature="e#2560#2561#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/LockCounterImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/benchmarks/MyBenchmark.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+            <state relative-caret-position="209">
+              <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
               <folding>
-                <element signature="e#559#560#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#563#564#0" expanded="true" />
+                <element signature="e#591#592#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1064">
+              <caret line="56" column="40" selection-start-line="56" selection-start-column="40" selection-end-line="56" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -54,6 +72,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>addAndGet</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -75,11 +98,28 @@
         <option value="$PROJECT_DIR$/src/test/java/hw/ru/sbt/counters/CounterTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/CounterTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/counterlab/counters/MutexCounter.java" />
-        <option value="$PROJECT_DIR$/src/test/java/counterlab/CounterTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/counterlab/counters/LockCounter.java" />
         <option value="$PROJECT_DIR$/src/main/java/counterlab/counters/LockCounterImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/counterlab/counters/MagicCounter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/counterlab/counters/MutexCounterImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/counterlab/CounterTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/counterlab/benchmarks/MyBenchmark.java" />
       </list>
     </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="114" />
@@ -87,12 +127,16 @@
     <option name="width" value="900" />
     <option name="height" value="824" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -130,17 +174,32 @@
               <item name="counterlab" type="b2602c69:ProjectViewProjectNode" />
               <item name="counterlab" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="counterlab" type="b2602c69:ProjectViewProjectNode" />
+              <item name="counterlab" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="counterlab" type="b2602c69:ProjectViewProjectNode" />
+              <item name="counterlab" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="counterlab" type="462c0819:PsiDirectoryNode" />
-              <item name="counters" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="counterlab" type="b2602c69:ProjectViewProjectNode" />
+              <item name="counterlab" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -154,17 +213,20 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2492864" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="counterlab" />
       <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -239,8 +301,6 @@
       <list>
         <item itemvalue="JUnit.CounterTest" />
         <item itemvalue="JUnit.CounterTest.testSequentialExecution" />
-        <item itemvalue="JUnit.CounterTest (1)" />
-        <item itemvalue="JUnit.CounterTest (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -255,7 +315,8 @@
       <option name="presentableId" value="Default" />
       <updated>1570809007139</updated>
       <workItem from="1570809008838" duration="738000" />
-      <workItem from="1570863191403" duration="5379000" />
+      <workItem from="1570863191403" duration="8641000" />
+      <workItem from="1570957138187" duration="2822000" />
     </task>
     <task id="LOCAL-00001" summary="ConcurrentCounter + MutexCounter + Tests">
       <created>1570869764774</created>
@@ -264,49 +325,55 @@
       <option name="project" value="LOCAL" />
       <updated>1570869764775</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="LockCounter Test">
+      <created>1570870901393</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1570870901393</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CounterTest - 2019.10.12 at 11h 25m 17s.xml">
-      <configuration name="CounterTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CounterTest - 2019.10.12 at 11h 27m 18s.xml">
-      <configuration name="CounterTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CounterTest - 2019.10.12 at 11h 28m 36s.xml">
-      <configuration name="CounterTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CounterTest - 2019.10.12 at 11h 29m 12s.xml">
-      <configuration name="CounterTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CounterTest - 2019.10.12 at 11h 31m 42s.xml">
-      <configuration name="CounterTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CounterTest - 2019.10.12 at 11h 34m 52s.xml">
-      <configuration name="CounterTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CounterTest - 2019.10.12 at 11h 35m 19s.xml">
-      <configuration name="CounterTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CounterTest - 2019.10.12 at 11h 36m 24s.xml">
-      <configuration name="CounterTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CounterTest - 2019.10.12 at 11h 39m 49s.xml">
-      <configuration name="CounterTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CounterTest - 2019.10.12 at 11h 40m 32s.xml">
+      <configuration name="CounterTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CounterTest - 2019.10.12 at 12h 01m 04s.xml">
+      <configuration name="CounterTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CounterTest - 2019.10.12 at 18h 45m 09s.xml">
+      <configuration name="CounterTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CounterTest - 2019.10.12 at 18h 45m 30s.xml">
+      <configuration name="CounterTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CounterTest - 2019.10.12 at 18h 50m 16s.xml">
+      <configuration name="CounterTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CounterTest - 2019.10.12 at 18h 52m 45s.xml">
+      <configuration name="CounterTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CounterTest - 2019.10.12 at 18h 53m 48s.xml">
+      <configuration name="CounterTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CounterTest - 2019.10.12 at 18h 58m 05s.xml">
+      <configuration name="CounterTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CounterTest - 2019.10.12 at 18h 58m 11s.xml">
+      <configuration name="CounterTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CounterTest - 2019.10.12 at 18h 58m 39s.xml">
       <configuration name="CounterTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6117000" />
+    <option name="totallyTimeSpent" value="12201000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19423692" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19637139" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -315,13 +382,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3295964" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3295964" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.25224215" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3295964" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3295964" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="CheckStyle" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -331,7 +398,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.2353255" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="SciView" order="6" />
@@ -345,47 +412,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ConcurrentCounter + MutexCounter + Tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="ConcurrentCounter + MutexCounter + Tests" />
+    <MESSAGE value="LockCounter Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="LockCounter Test" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/ConcurrentCounterImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/counterlab/CounterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="39" column="38" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2404#2405#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/MutexCounterImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-          <folding>
-            <element signature="e#182#183#0" expanded="true" />
-            <element signature="e#212#213#0" expanded="true" />
-            <element signature="e#266#267#0" expanded="true" />
-            <element signature="e#293#294#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -403,12 +437,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/jre/lib/rt.jar!/sun/misc/Unsafe.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="366" column="22" selection-start-line="366" selection-start-column="22" selection-end-line="366" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/concurrent/atomic/AtomicLong.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="218" column="30" selection-start-line="218" selection-start-column="30" selection-end-line="218" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/MutexCounterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="111" selection-start-line="4" selection-start-column="111" selection-end-line="4" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/LockCounterImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+        <state relative-caret-position="95">
+          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
           <folding>
-            <element signature="e#559#560#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#577#578#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/ConcurrentCounterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/MagicCounter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/benchmarks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/counterlab/CounterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="77" column="34" selection-start-line="77" selection-start-column="34" selection-end-line="77" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2519#2520#0" expanded="true" />
+            <element signature="e#2560#2561#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1064">
+          <caret line="56" column="40" selection-start-line="56" selection-start-column="40" selection-end-line="56" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/benchmarks/MyBenchmark.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#563#564#0" expanded="true" />
+            <element signature="e#591#592#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -422,7 +533,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.2492864" />
               </list>
             </option>
           </splitter-proportions>
@@ -430,10 +541,11 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.2492864" />
               </list>
             </option>
           </splitter-proportions>
@@ -441,10 +553,11 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
+          <last-edited>bootstrap</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.2492864" />
               </list>
             </option>
           </splitter-proportions>
@@ -452,10 +565,11 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.2492864" />
               </list>
             </option>
           </splitter-proportions>
@@ -463,10 +577,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
+          <last-edited>counterlab</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.2492864" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -486,10 +602,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Maven: net.sf.jopt-simple:jopt-simple:4.6</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.2492864" />
               </list>
             </option>
           </splitter-proportions>
