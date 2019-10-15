@@ -1,6 +1,5 @@
-package counterlab;
+package counterlab.counters;
 
-import counterlab.counters.*;
 import org.junit.Test;
 
 import java.util.List;
@@ -43,6 +42,13 @@ public class CounterTest {
         Counter counter = new LockCounterImpl();
         int incrementCallsCount = 1418800;
         testCounter(counter, incrementCallsCount, true);
+    }
+
+    @Test
+    public void magicCounterTest() {
+        Counter counter = new MagicCounterImpl();
+        int incrementCallsCount = 1418800;
+        testCounter(counter, incrementCallsCount, false);
     }
 
     private void testCounter(Counter counter, int incrementCallsCount, boolean assertTrue) {

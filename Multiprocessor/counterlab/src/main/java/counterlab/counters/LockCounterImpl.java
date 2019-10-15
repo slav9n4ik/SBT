@@ -6,7 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class LockCounterImpl implements Counter {
 
     private final Lock locker;
-    private long count;
+    private volatile long count;
 
     public LockCounterImpl() {
         this.locker = new ReentrantLock();

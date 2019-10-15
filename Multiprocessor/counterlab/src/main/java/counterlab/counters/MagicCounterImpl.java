@@ -1,15 +1,16 @@
 package counterlab.counters;
 
-public class MagicCounter implements Counter {
+public class MagicCounterImpl implements Counter {
 
-    private volatile long count;
+    private long count;
 
     @Override
     public void increment() {
+        count += 1;
     }
 
     @Override
     public long getValue() {
-        return 0;
+        return count;
     }
 }
