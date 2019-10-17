@@ -23,6 +23,7 @@ public class CountersBenchmark {
         Counter concurrentCounter = new ConcurrentCounterImpl();
         Counter lockCounter = new LockCounterImpl();
         Counter magicCounter = new MagicCounterImpl(THREADS_NUMBER);
+        Counter magicArrayCounter = new MagicArrayCounter(THREADS_NUMBER);
         Counter mutexCounter = new MutexCounterImpl();
         Counter seqCounter = new SeqCounterImpl();
     }
@@ -68,6 +69,20 @@ public class CountersBenchmark {
     @GroupThreads(THREADS_NUMBER)
     public void magicGetCounterTest(CountersState state) {
         state.magicCounter.getValues();
+    }
+
+    @Benchmark
+    @Group("MagicArrayCounter")
+    @GroupThreads(THREADS_NUMBER)
+    public void magicArrayIncCounterTest(CountersState state) {
+        state.magicArrayCounter.increment();
+    }
+
+    @Benchmark
+    @Group("MagicArrayCounter")
+    @GroupThreads(THREADS_NUMBER)
+    public void magicArrayGetCounterTest(CountersState state) {
+        state.magicArrayCounter.getValues();
     }
 
     @Benchmark
