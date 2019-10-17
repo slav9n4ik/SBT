@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f29ce6b0-ac64-42f2-9cf7-a1f9f884edc5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/counterlab/BakeryHashLock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/counterlab/counters/MagicCounter2Impl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/counterlab/counters/MagicArrayCounter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/counterlab/BakeryLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/counterlab/BakeryLock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/counterlab/BakeryHashLock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/counterlab/BakeryLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/counterlab/lock/BakeryLock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/counterlab/benchmarks/CountersBenchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/counterlab/benchmarks/CountersBenchmark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/counterlab/counters/ConcurrentCounterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/counterlab/counters/ConcurrentCounterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/counterlab/counters/Counter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/counterlab/counters/Counter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/counterlab/counters/LockCounterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/counterlab/counters/LockCounterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/counterlab/counters/MagicCounter2Impl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/counterlab/counters/MagicCounterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/counterlab/counters/MagicCounterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/counterlab/counters/MutexCounterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/counterlab/counters/MutexCounterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/counterlab/counters/SeqCounterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/counterlab/counters/SeqCounterImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/counterlab/counters/CounterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/counterlab/counters/CounterTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,43 +31,39 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/counterlab/counters/CounterTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="76" />
+            <state relative-caret-position="1102">
+              <caret line="58" column="42" lean-forward="true" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2962#2963#0" expanded="true" />
+                <element signature="e#3039#3040#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/BakeryHashLock.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/MagicCounterImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
-              <folding>
-                <element signature="e#905#906#0" expanded="true" />
-                <element signature="e#960#961#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="285">
+              <caret line="17" column="49" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/BakeryLock.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/lock/BakeryLock.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="38" selection-start-line="38" selection-end-line="39" selection-end-column="31" />
+            <state relative-caret-position="133">
+              <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/MagicCounter2Impl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/MagicArrayCounter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+            <state relative-caret-position="285">
+              <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -72,6 +76,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindBugs-IDEA-Workspace">
+    <toolWindowEditorPreview>false</toolWindowEditorPreview>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -106,11 +113,14 @@
         <option value="$PROJECT_DIR$/src/main/java/counterlab/counters/LockCounterImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/counterlab/counters/MutexCounterImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/counterlab/benchmarks/CountersBenchmark.java" />
-        <option value="$PROJECT_DIR$/src/main/java/counterlab/counters/MagicCounterImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/counterlab/counters/MagicCounter2Impl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/counterlab/BakeryHashLock.java" />
         <option value="$PROJECT_DIR$/src/main/java/counterlab/BakeryLock.java" />
+        <option value="$PROJECT_DIR$/src/main/java/counterlab/BakeryHashLock.java" />
+        <option value="$PROJECT_DIR$/src/main/java/counterlab/ArrayLock.java" />
+        <option value="$PROJECT_DIR$/src/main/java/counterlab/counters/CustomArrayCounter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/counterlab/counters/MagicCounter2Impl.java" />
         <option value="$PROJECT_DIR$/src/test/java/counterlab/counters/CounterTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/counterlab/lock/BakeryLock.java" />
+        <option value="$PROJECT_DIR$/src/main/java/counterlab/counters/MagicCounterImpl.java" />
       </list>
     </option>
   </component>
@@ -252,7 +262,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CounterTest.magicCounterTest">
+  <component name="RunManager" selected="JUnit.CounterTest (1)">
+    <configuration name="CounterTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="counterLab" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="counterlab.counters.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="counterlab.counters" />
+      <option name="MAIN_CLASS_NAME" value="counterlab.counters.CounterTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CounterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="counterlab" />
       <option name="PACKAGE_NAME" value="counterlab.counters" />
@@ -292,6 +317,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CounterTest.magicCounter2Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="counterLab" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="counterlab.counters.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="counterlab.counters" />
+      <option name="MAIN_CLASS_NAME" value="counterlab.counters.CounterTest" />
+      <option name="METHOD_NAME" value="magicCounter2Test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CounterTest.magicCounterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="counterLab" />
       <extension name="coverage">
@@ -326,7 +367,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CounterTest (1)" />
         <item itemvalue="JUnit.CounterTest.magicCounterTest" />
+        <item itemvalue="JUnit.CounterTest.magicCounter2Test" />
         <item itemvalue="JUnit.CounterTest.testSequentialExecution" />
         <item itemvalue="JUnit.CounterTest" />
       </list>
@@ -347,7 +390,7 @@
       <workItem from="1570957138187" duration="3080000" />
       <workItem from="1571066634506" duration="3963000" />
       <workItem from="1571153709839" duration="12656000" />
-      <workItem from="1571326209796" duration="2610000" />
+      <workItem from="1571326209796" duration="4757000" />
     </task>
     <task id="LOCAL-00001" summary="ConcurrentCounter + MutexCounter + Tests">
       <created>1570869764774</created>
@@ -384,43 +427,50 @@
       <option name="project" value="LOCAL" />
       <updated>1571326618830</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Bakery primitive lock refactoring + Fail custom Bakery lock">
+      <created>1571329034253</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1571329034253</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CounterTest_magicCounterTest - 2019.10.17 at 18h 54m 12s.xml">
+    <history-entry file="CounterTest_magicCounter2Test - 2019.10.17 at 19h 57m 20s.xml">
+      <configuration name="CounterTest.magicCounter2Test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CounterTest_(1) - 2019.10.17 at 19h 59m 28s.xml">
+      <configuration name="CounterTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CounterTest_(1) - 2019.10.17 at 20h 01m 01s.xml">
+      <configuration name="CounterTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CounterTest_magicCounterTest - 2019.10.17 at 20h 21m 59s.xml">
       <configuration name="CounterTest.magicCounterTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CounterTest_magicCounterTest - 2019.10.17 at 18h 59m 33s.xml">
+    <history-entry file="CounterTest_magicCounterTest - 2019.10.17 at 20h 23m 29s.xml">
       <configuration name="CounterTest.magicCounterTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CounterTest_magicCounterTest - 2019.10.17 at 19h 01m 52s.xml">
+    <history-entry file="CounterTest_magicCounterTest - 2019.10.17 at 20h 25m 41s.xml">
       <configuration name="CounterTest.magicCounterTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CounterTest_magicCounterTest - 2019.10.17 at 19h 05m 51s.xml">
+    <history-entry file="CounterTest_magicCounterTest - 2019.10.17 at 20h 26m 35s.xml">
       <configuration name="CounterTest.magicCounterTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CounterTest_magicCounterTest - 2019.10.17 at 19h 06m 19s.xml">
+    <history-entry file="CounterTest_magicCounterTest - 2019.10.17 at 20h 27m 47s.xml">
       <configuration name="CounterTest.magicCounterTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CounterTest_magicCounterTest - 2019.10.17 at 19h 10m 01s.xml">
+    <history-entry file="CounterTest_magicCounterTest - 2019.10.17 at 20h 28m 21s.xml">
       <configuration name="CounterTest.magicCounterTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CounterTest_magicCounterTest - 2019.10.17 at 19h 10m 28s.xml">
-      <configuration name="CounterTest.magicCounterTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CounterTest_magicCounterTest - 2019.10.17 at 19h 10m 49s.xml">
-      <configuration name="CounterTest.magicCounterTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CounterTest_magicCounterTest - 2019.10.17 at 19h 12m 19s.xml">
-      <configuration name="CounterTest.magicCounterTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CounterTest_magicCounterTest - 2019.10.17 at 19h 13m 28s.xml">
-      <configuration name="CounterTest.magicCounterTest" configurationId="JUnit" />
+    <history-entry file="CounterTest_(1) - 2019.10.17 at 20h 29m 24s.xml">
+      <configuration name="CounterTest (1)" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31688000" />
+    <option name="totallyTimeSpent" value="33835000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -512,7 +562,8 @@
     <MESSAGE value="Test benchmark" />
     <MESSAGE value="Add Benchmarks" />
     <MESSAGE value="Bakery primitive lock" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bakery primitive lock" />
+    <MESSAGE value="Bakery primitive lock refactoring + Fail custom Bakery lock" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bakery primitive lock refactoring + Fail custom Bakery lock" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/Main.java">
@@ -582,18 +633,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/LockCounterImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#549#550#0" expanded="true" />
-            <element signature="e#577#578#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -615,24 +654,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/MagicCounterImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/ArrayLock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/MagicCounter2Impl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        <state relative-caret-position="153">
+          <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/BakeryHashLock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
+        <state relative-caret-position="114">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="20" />
           <folding>
             <element signature="e#905#906#0" expanded="true" />
             <element signature="e#960#961#0" expanded="true" />
@@ -640,20 +672,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/BakeryLock.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/MagicArrayCounter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="38" selection-start-line="38" selection-end-line="39" selection-end-column="31" />
+        <state relative-caret-position="285">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/MagicCounter2Impl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="14" column="79" selection-start-line="14" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/LockCounterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/lock/BakeryLock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/counterlab/counters/MagicCounterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="17" column="49" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/counterlab/counters/CounterTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="76" />
+        <state relative-caret-position="1102">
+          <caret line="58" column="42" lean-forward="true" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2962#2963#0" expanded="true" />
+            <element signature="e#3039#3040#0" expanded="true" />
           </folding>
         </state>
       </provider>

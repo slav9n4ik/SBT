@@ -1,4 +1,4 @@
-package counterlab;
+package counterlab.lock;
 
 public class BakeryLock {
     final int threadNumber;

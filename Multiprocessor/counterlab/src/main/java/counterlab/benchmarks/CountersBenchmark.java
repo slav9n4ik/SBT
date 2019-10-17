@@ -39,7 +39,7 @@ public class CountersBenchmark {
     @Group("ConcurrentCounter")
     @GroupThreads(THREADS_NUMBER)
     public void concurrentGetCounterTest(CountersState state) {
-        state.concurrentCounter.getValue();
+        state.concurrentCounter.getValues();
     }
 
     @Benchmark
@@ -53,7 +53,7 @@ public class CountersBenchmark {
     @Group("LockCounter")
     @GroupThreads(THREADS_NUMBER)
     public void lockGetCounterTest(CountersState state) {
-        state.lockCounter.getValue();
+        state.lockCounter.getValues();
     }
 
     @Benchmark
@@ -67,7 +67,7 @@ public class CountersBenchmark {
     @Group("MagicCounter")
     @GroupThreads(THREADS_NUMBER)
     public void magicGetCounterTest(CountersState state) {
-        state.magicCounter.getValue();
+        state.magicCounter.getValues();
     }
 
     @Benchmark
@@ -81,7 +81,7 @@ public class CountersBenchmark {
     @Group("MutexCounter")
     @GroupThreads(THREADS_NUMBER)
     public void mutexGetCounterTest(CountersState state) {
-        state.mutexCounter.getValue();
+        state.mutexCounter.getValues();
     }
 
     @Benchmark
@@ -95,7 +95,7 @@ public class CountersBenchmark {
     @Group("SeqCounter")
     @GroupThreads(THREADS_NUMBER)
     public void seqGetCounterTest(CountersState state) {
-        state.seqCounter.getValue();
+        state.seqCounter.getValues();
     }
 
     public static void main(String[] args) throws RunnerException {

@@ -15,6 +15,8 @@ import static org.junit.Assert.assertNotEquals;
 
 public class CounterTest {
 
+    private static final int threadNumber = 4;
+
     @Test
     public void testSequentialExecution() {
         Counter counter = new SeqCounterImpl();
@@ -46,20 +48,20 @@ public class CounterTest {
 
     @Test
     public void magicCounterTest() {
-        Counter counter = new MagicCounterImpl(4);
+        Counter counter = new MagicCounterImpl(threadNumber);
         int incrementCallsCount = 1418800;
         testCounter(counter, incrementCallsCount, true);
     }
 
-//    @Test
-//    public void magicCounterTest() {
-//        Counter counter = new MagicCounter2Impl(4);
-//        int incrementCallsCount = 1418800;
-//        testCounter(counter, incrementCallsCount, true);
-//    }
+    @Test
+    public void magicArrayCounterTest() {
+        Counter counter = new MagicArrayCounter(threadNumber);
+        int incrementCallsCount = 1418800;
+        testCounter(counter, incrementCallsCount, true);
+    }
 
     private void testCounter(Counter counter, int incrementCallsCount, boolean assertTrue) {
-        ExecutorService executors = Executors.newFixedThreadPool(4);
+        ExecutorService executors = Executors.newFixedThreadPool(threadNumber);
 
         List<Future> futures = range(0, incrementCallsCount)
                 .mapToObj(i -> executors.submit(incrementRunnable(counter)))
@@ -74,15 +76,14 @@ public class CounterTest {
         }
 
         if (assertTrue) {
-            assertEquals("Oops! Smth is wrong!", incrementCallsCount, counter.getValue());
+            assertEquals("Oops! Smth is wrong!", incrementCallsCount, counter.getValues());
             System.out.println(counter.getClass().getSimpleName() + ": "
-                    + incrementCallsCount + " is equals " + counter.getValue());
+                    + incrementCallsCount + " is equals " + counter.getValues());
         } else {
-            assertNotEquals("Oops! Smth is wrong!", incrementCallsCount, counter.getValue());
+            assertNotEquals("Oops! Smth is wrong!", incrementCallsCount, counter.getValues());
             System.out.println(counter.getClass().getSimpleName() + ": "
-                    + incrementCallsCount + " is not equals " + counter.getValue());
+                    + incrementCallsCount + " is not equals " + counter.getValues());
         }
-
 
         executors.shutdown();
     }

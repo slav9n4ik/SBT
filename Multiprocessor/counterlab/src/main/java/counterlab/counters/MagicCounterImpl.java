@@ -1,6 +1,6 @@
 package counterlab.counters;
 
-import counterlab.BakeryLock;
+import counterlab.lock.BakeryLock;
 
 public class MagicCounterImpl implements Counter {
 
@@ -15,12 +15,12 @@ public class MagicCounterImpl implements Counter {
     public void increment() {
         bakeryLock.lock();
             count += 1;
-        System.out.println("I am " + Thread.currentThread().getId() % 4 + " and count is: " + count);
+        System.out.println("Count is: " + count);
         bakeryLock.unlock();
     }
 
     @Override
-    public long getValue() {
+    public long getValues() {
         return count;
     }
 }

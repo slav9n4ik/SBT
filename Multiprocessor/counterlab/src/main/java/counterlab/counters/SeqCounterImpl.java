@@ -8,7 +8,7 @@ public class SeqCounterImpl implements Counter {
     }
 
     @Override
-    public long getValue() {
+    public long getValues() {
         return value;
     }
 }
