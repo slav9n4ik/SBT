@@ -15,7 +15,7 @@ public class MagicCounterImpl implements Counter {
     public void increment() {
         bakeryLock.lock();
             count += 1;
-        //System.out.println("I am " + Thread.currentThread().getId() % 4 + " and count is: " + count);
+        System.out.println("I am " + Thread.currentThread().getId() % 4 + " and count is: " + count);
         bakeryLock.unlock();
     }
 

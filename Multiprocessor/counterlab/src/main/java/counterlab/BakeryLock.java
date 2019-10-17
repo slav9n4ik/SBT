@@ -21,8 +21,10 @@ public class BakeryLock {
         label[id] = max(label) + 1;
         flag[id] = false;
         for (int k = 0; k < flag.length; k++) {
-            while (flag[k]) {}
-            while (label[k] != 0 && (label[id] > label[k] || (label[id] == label[k] && id > k))) {};
+            while (flag[k]) {
+            }
+            while (label[k] != 0 && (label[id] > label[k] || (label[id] == label[k] && id > k))) {
+            }
         }
     }
 
@@ -32,14 +34,14 @@ public class BakeryLock {
     }
 
     private int getCurrentThreadIntID() {
-        int id = Long.hashCode(Thread.currentThread().getId()) % threadNumber;
-        return id;
-        //return Integer.parseInt(Thread.currentThread().getName());
+        //Неочень решение
+        String id = Thread.currentThread().getName().split("-")[3];
+        return Integer.parseInt(id) - 1;
     }
 
     private int max(int[] array) {
         int max = 0;
-        for(int i : array) {
+        for (int i : array) {
             if (i > max) {
                 max = i;
             }

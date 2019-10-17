@@ -51,6 +51,13 @@ public class CounterTest {
         testCounter(counter, incrementCallsCount, true);
     }
 
+//    @Test
+//    public void magicCounterTest() {
+//        Counter counter = new MagicCounter2Impl(4);
+//        int incrementCallsCount = 1418800;
+//        testCounter(counter, incrementCallsCount, true);
+//    }
+
     private void testCounter(Counter counter, int incrementCallsCount, boolean assertTrue) {
         ExecutorService executors = Executors.newFixedThreadPool(4);
 
