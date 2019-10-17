@@ -22,7 +22,7 @@ public class CountersBenchmark {
     public static class CountersState {
         Counter concurrentCounter = new ConcurrentCounterImpl();
         Counter lockCounter = new LockCounterImpl();
-        Counter magicCounter = new MagicCounterImpl();
+        Counter magicCounter = new MagicCounterImpl(THREADS_NUMBER);
         Counter mutexCounter = new MutexCounterImpl();
         Counter seqCounter = new SeqCounterImpl();
     }

@@ -46,9 +46,9 @@ public class CounterTest {
 
     @Test
     public void magicCounterTest() {
-        Counter counter = new MagicCounterImpl();
+        Counter counter = new MagicCounterImpl(4);
         int incrementCallsCount = 1418800;
-        testCounter(counter, incrementCallsCount, false);
+        testCounter(counter, incrementCallsCount, true);
     }
 
     private void testCounter(Counter counter, int incrementCallsCount, boolean assertTrue) {
