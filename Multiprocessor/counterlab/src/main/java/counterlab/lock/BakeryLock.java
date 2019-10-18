@@ -1,12 +1,11 @@
 package counterlab.lock;
 
 public class BakeryLock {
-    final int threadNumber;
+
     volatile boolean[] flag;
     volatile int[] label;
 
     public BakeryLock(int threadNumber) {
-        this.threadNumber = threadNumber;
         flag = new boolean[threadNumber];
         label = new int[threadNumber];
         for (int i = 0; i < threadNumber; i++) {
@@ -21,9 +20,9 @@ public class BakeryLock {
         label[id] = max(label) + 1;
         flag[id] = false;
         for (int k = 0; k < flag.length; k++) {
-            while (flag[k]) {
-            }
-            while (label[k] != 0 && (label[id] > label[k] || (label[id] == label[k] && id > k))) {
+            if (k != id) {
+                while (flag[k]) {}
+                while (label[k] != 0 && (label[id] > label[k] || (label[id] == label[k] && id > k))) {}
             }
         }
     }
@@ -36,6 +35,7 @@ public class BakeryLock {
     private int getCurrentThreadIntID() {
         //Неочень решение
         String id = Thread.currentThread().getName().split("-")[3];
+        System.out.println(Thread.currentThread().getName());
         return Integer.parseInt(id) - 1;
     }
 

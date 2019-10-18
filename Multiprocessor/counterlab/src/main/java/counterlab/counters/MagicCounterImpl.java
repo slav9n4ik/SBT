@@ -4,7 +4,7 @@ import counterlab.lock.BakeryLock;
 
 public class MagicCounterImpl implements Counter {
 
-    private long count;
+    private volatile int count;
     private BakeryLock bakeryLock;
 
     public MagicCounterImpl(int threadNumber) {
@@ -14,8 +14,8 @@ public class MagicCounterImpl implements Counter {
     @Override
     public void increment() {
         bakeryLock.lock();
-            count += 1;
-        System.out.println("Count is: " + count);
+            count = count + 1;
+        //System.out.println(Thread.currentThread().getName() + " Count is: " + count);
         bakeryLock.unlock();
     }
 
