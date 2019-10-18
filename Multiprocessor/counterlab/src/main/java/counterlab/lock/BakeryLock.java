@@ -34,9 +34,10 @@ public class BakeryLock {
 
     private int getCurrentThreadIntID() {
         //Неочень решение
-        String id = Thread.currentThread().getName().split("-")[3];
-        System.out.println(Thread.currentThread().getName());
-        return Integer.parseInt(id) - 1;
+        //String id = Thread.currentThread().getName().split("-")[3];
+        //System.out.println(Thread.currentThread().getName());
+        return (int)Thread.currentThread().getId() % label.length;
+        //return Integer.parseInt(id) - 1;
     }
 
     private int max(int[] array) {

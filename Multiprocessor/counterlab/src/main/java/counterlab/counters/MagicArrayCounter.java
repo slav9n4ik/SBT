@@ -27,7 +27,8 @@ public class MagicArrayCounter implements Counter{
 
     private int getCurrentThreadIntID() {
         //Неочень решение
-        String id = Thread.currentThread().getName().split("-")[3];
-        return Integer.parseInt(id) - 1;
+//        String id = Thread.currentThread().getName().split("-")[3];
+//        return Integer.parseInt(id) - 1;
+        return (int)Thread.currentThread().getId() % values.length;
     }
 }

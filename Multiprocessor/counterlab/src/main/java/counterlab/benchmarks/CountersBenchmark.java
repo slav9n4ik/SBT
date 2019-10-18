@@ -25,7 +25,7 @@ public class CountersBenchmark {
         Counter magicCounter = new MagicCounterImpl(THREADS_NUMBER);
         Counter magicArrayCounter = new MagicArrayCounter(THREADS_NUMBER);
         Counter mutexCounter = new MutexCounterImpl();
-        Counter seqCounter = new SeqCounterImpl();
+        //Counter seqCounter = new SeqCounterImpl();
     }
 
 
@@ -36,12 +36,12 @@ public class CountersBenchmark {
         state.concurrentCounter.increment();
     }
 
-    @Benchmark
-    @Group("ConcurrentCounter")
-    @GroupThreads(THREADS_NUMBER)
-    public void concurrentGetCounterTest(CountersState state) {
-        state.concurrentCounter.getValues();
-    }
+//    @Benchmark
+//    @Group("ConcurrentCounter")
+//    @GroupThreads(THREADS_NUMBER)
+//    public void concurrentGetCounterTest(CountersState state) {
+//        state.concurrentCounter.getValues();
+//    }
 
     @Benchmark
     @Group("LockCounter")
@@ -50,12 +50,12 @@ public class CountersBenchmark {
         state.lockCounter.increment();
     }
 
-    @Benchmark
-    @Group("LockCounter")
-    @GroupThreads(THREADS_NUMBER)
-    public void lockGetCounterTest(CountersState state) {
-        state.lockCounter.getValues();
-    }
+//    @Benchmark
+//    @Group("LockCounter")
+//    @GroupThreads(THREADS_NUMBER)
+//    public void lockGetCounterTest(CountersState state) {
+//        state.lockCounter.getValues();
+//    }
 
     @Benchmark
     @Group("MagicCounter")
@@ -64,12 +64,12 @@ public class CountersBenchmark {
         state.magicCounter.increment();
     }
 
-    @Benchmark
-    @Group("MagicCounter")
-    @GroupThreads(THREADS_NUMBER)
-    public void magicGetCounterTest(CountersState state) {
-        state.magicCounter.getValues();
-    }
+//    @Benchmark
+//    @Group("MagicCounter")
+//    @GroupThreads(THREADS_NUMBER)
+//    public void magicGetCounterTest(CountersState state) {
+//        state.magicCounter.getValues();
+//    }
 
     @Benchmark
     @Group("MagicArrayCounter")
@@ -78,12 +78,12 @@ public class CountersBenchmark {
         state.magicArrayCounter.increment();
     }
 
-    @Benchmark
-    @Group("MagicArrayCounter")
-    @GroupThreads(THREADS_NUMBER)
-    public void magicArrayGetCounterTest(CountersState state) {
-        state.magicArrayCounter.getValues();
-    }
+//    @Benchmark
+//    @Group("MagicArrayCounter")
+//    @GroupThreads(THREADS_NUMBER)
+//    public void magicArrayGetCounterTest(CountersState state) {
+//        state.magicArrayCounter.getValues();
+//    }
 
     @Benchmark
     @Group("MutexCounter")
@@ -92,26 +92,26 @@ public class CountersBenchmark {
         state.mutexCounter.increment();
     }
 
-    @Benchmark
-    @Group("MutexCounter")
-    @GroupThreads(THREADS_NUMBER)
-    public void mutexGetCounterTest(CountersState state) {
-        state.mutexCounter.getValues();
-    }
+//    @Benchmark
+//    @Group("MutexCounter")
+//    @GroupThreads(THREADS_NUMBER)
+//    public void mutexGetCounterTest(CountersState state) {
+//        state.mutexCounter.getValues();
+//    }
 
-    @Benchmark
-    @Group("SeqCounter")
-    @GroupThreads(THREADS_NUMBER)
-    public void seqIncCounterTest(CountersState state) {
-        state.seqCounter.increment();
-    }
-
-    @Benchmark
-    @Group("SeqCounter")
-    @GroupThreads(THREADS_NUMBER)
-    public void seqGetCounterTest(CountersState state) {
-        state.seqCounter.getValues();
-    }
+//    @Benchmark
+//    @Group("SeqCounter")
+//    @GroupThreads(THREADS_NUMBER)
+//    public void seqIncCounterTest(CountersState state) {
+//        state.seqCounter.increment();
+//    }
+//
+//    @Benchmark
+//    @Group("SeqCounter")
+//    @GroupThreads(THREADS_NUMBER)
+//    public void seqGetCounterTest(CountersState state) {
+//        state.seqCounter.getValues();
+//    }
 
     public static void main(String[] args) throws RunnerException {
         Options options = new OptionsBuilder()
