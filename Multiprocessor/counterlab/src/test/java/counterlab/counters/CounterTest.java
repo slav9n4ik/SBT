@@ -16,7 +16,7 @@ import static org.junit.Assert.assertNotEquals;
 public class CounterTest {
 
     private static final int threadNumber = 4;
-    private static final int incrementCallsCount = 1_000_000;
+    private static final int incrementCallsCount = 500_000;
 
     @Test
     public void testSequentialExecution() {

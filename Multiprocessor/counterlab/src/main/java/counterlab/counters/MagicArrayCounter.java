@@ -4,7 +4,7 @@ public class MagicArrayCounter implements Counter{
     private int[] values;
 
     public MagicArrayCounter(int threadNumber) {
-        values = new int[threadNumber];
+        values = new int[threadNumber * 100];
         for (int i = 0; i < threadNumber; i++) {
             values[i] = 0;
         }
@@ -26,9 +26,6 @@ public class MagicArrayCounter implements Counter{
     }
 
     private int getCurrentThreadIntID() {
-        //Неочень решение
-//        String id = Thread.currentThread().getName().split("-")[3];
-//        return Integer.parseInt(id) - 1;
-        return (int)Thread.currentThread().getId() % values.length;
+        return Long.hashCode(Thread.currentThread().getId()) % (values.length * 100);
     }
 }

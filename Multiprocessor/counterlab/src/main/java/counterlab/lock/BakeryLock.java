@@ -6,8 +6,8 @@ public class BakeryLock {
     volatile int[] label;
 
     public BakeryLock(int threadNumber) {
-        flag = new boolean[threadNumber];
-        label = new int[threadNumber];
+        flag = new boolean[threadNumber * 100];
+        label = new int[threadNumber * 100];
         for (int i = 0; i < threadNumber; i++) {
             flag[i] = false;
             label[i] = 0;
@@ -33,11 +33,7 @@ public class BakeryLock {
     }
 
     private int getCurrentThreadIntID() {
-        //Неочень решение
-        //String id = Thread.currentThread().getName().split("-")[3];
-        //System.out.println(Thread.currentThread().getName());
-        return (int)Thread.currentThread().getId() % label.length;
-        //return Integer.parseInt(id) - 1;
+        return Long.hashCode(Thread.currentThread().getId()) % (label.length * 100);
     }
 
     private int max(int[] array) {
