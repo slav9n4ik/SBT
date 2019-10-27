@@ -3,10 +3,7 @@ package counterlab.counters;
 import org.junit.Test;
 
 import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.IntStream.range;
@@ -15,8 +12,8 @@ import static org.junit.Assert.assertNotEquals;
 
 public class CounterTest {
 
-    private static final int threadNumber = 4;
-    private static final int incrementCallsCount = 500_000;
+    private static final int threadNumber = 240;
+    private static final int incrementCallsCount = 5_500_000;
 
     @Test
     public void testSequentialExecution() {
@@ -53,6 +50,45 @@ public class CounterTest {
     public void magicArrayCounterTest() {
         Counter counter = new MagicArrayCounter(threadNumber);
         testCounter(counter, true);
+    }
+
+    @Test
+    public void magicArrayCounter2Test() {
+        CountDownLatch countDownLatch = new CountDownLatch(threadNumber);
+        MagicArray2Counter counter = new MagicArray2Counter(threadNumber, countDownLatch);
+        testForMagicArray2(counter, countDownLatch);
+    }
+
+    private void testForMagicArray2(MagicArray2Counter counter, CountDownLatch countDownLatch) {
+        ExecutorService executors = Executors.newFixedThreadPool(threadNumber);
+
+
+        for (int i = 0; i < threadNumber; i++) {
+            executors.execute(counter::initInCounter);
+        }
+
+        try {
+            countDownLatch.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Total: " + counter.getValue().size());
+
+        List<Future> futures = range(0, incrementCallsCount)
+                .mapToObj(i -> executors.submit(incrementRunnable(counter)))
+                .collect(toList());
+
+        for (Future future : futures) {
+            try {
+                future.get();
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+            }
+        }
+
+        assertEquals("Oops! Smth is wrong!", incrementCallsCount, counter.getValues());
+        System.out.println(counter.getClass().getSimpleName() + ": "
+                + incrementCallsCount + " is equals " + counter.getValues());
     }
 
     private void testCounter(Counter counter, boolean assertTrue) {

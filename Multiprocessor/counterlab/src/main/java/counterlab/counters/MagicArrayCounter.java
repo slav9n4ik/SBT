@@ -1,6 +1,6 @@
 package counterlab.counters;
 
-public class MagicArrayCounter implements Counter{
+public class MagicArrayCounter implements Counter {
     private int[] values;
 
     public MagicArrayCounter(int threadNumber) {
